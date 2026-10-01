@@ -1,0 +1,64 @@
+{
+  "scope": "Historical isolated SQL-only checker, not MEASURED PROCESSING TOTAL or official score",
+  "checker_controls": [
+    "private-cluster autovacuum off for 1M",
+    "session hashagg off",
+    "session parallel gather off"
+  ],
+  "measurements": [
+    {
+      "source_evidence_sha256": "88779a6287b4a063bc63b8de2b4dc6842be2b2483ae95254851716af39573df8",
+      "fixture_rows": 100000,
+      "candidate_seconds": 5.389421,
+      "first_official_seconds": 6.556757,
+      "repeat_official_seconds": 6.476469,
+      "destination_mismatch": 0,
+      "repeat_mismatch": 0,
+      "destination_rows": 532416,
+      "peak_postgres_rss_kb": 499376,
+      "origin_bytes": 211484672,
+      "recovery": {
+        "completed_work_reused": false,
+        "duplicate_rows_prevented_by": "truncate before rerun",
+        "final_digest": "93441fdcfb1cce41540415233a71dc670e1e294fc28d98cdeadf9572492c1dc4",
+        "final_rows": 532416,
+        "interrupted_after": "public.table3",
+        "matches_uninterrupted": true,
+        "partial_table1_rows": 0,
+        "partial_table3_rows": 4,
+        "persisted_before_resume": "committed destination rows from the interrupted statement",
+        "projection_persisted": false,
+        "resume": "truncate destinations and rerun the candidate statements"
+      },
+      "mechanism_id": "table2-only-matched-slot-v1",
+      "digest": "93441fdcfb1cce41540415233a71dc670e1e294fc28d98cdeadf9572492c1dc4"
+    },
+    {
+      "source_evidence_sha256": "6f3b6a0497ff5fa637f07ceba8622b1f4c68e1d70ab58bdc829bb9b32c51b747",
+      "fixture_rows": 1000000,
+      "candidate_seconds": 75.621551,
+      "first_official_seconds": 89.734122,
+      "repeat_official_seconds": 91.745764,
+      "destination_mismatch": 0,
+      "repeat_mismatch": 0,
+      "destination_rows": 5321553,
+      "peak_postgres_rss_kb": 1090640,
+      "origin_bytes": 2112102400,
+      "recovery": {
+        "completed_work_reused": false,
+        "duplicate_rows_prevented_by": "truncate before rerun",
+        "final_digest": "dd52cd4be7b1ba2fcc2246195c47d14a5d2452eddbab0d15dfe198e39e3d83a2",
+        "final_rows": 5321553,
+        "interrupted_after": "public.table3",
+        "matches_uninterrupted": true,
+        "partial_table1_rows": 0,
+        "partial_table3_rows": 4,
+        "persisted_before_resume": "committed destination rows from the interrupted statement",
+        "projection_persisted": false,
+        "resume": "truncate destinations and rerun the candidate statements"
+      },
+      "mechanism_id": "table2-only-matched-slot-v1",
+      "digest": "dd52cd4be7b1ba2fcc2246195c47d14a5d2452eddbab0d15dfe198e39e3d83a2"
+    }
+  ]
+}

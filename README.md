@@ -1,5 +1,7 @@
 # PostgreSQL Data Manager
 
+This entry modifies the [official application](https://github.com/igorsiecz/kaggle_postgre_challenge) at commit `5dfde9d967425982229b92d6ffe98efcd74612e9`. Only the validated `public.table2` recipe receives a matched-slot rewrite. The generator and six recipe files remain unchanged. See [SUBMISSION.md](./SUBMISSION.md) for the change, reproduction steps, measurements, and recovery limits. Development used AI coding assistants.
+
 PostgreSQL Data Manager is a desktop application for browsing and administering PostgreSQL databases through an SSH connection. It includes table previews, imports, version history, controlled destructive actions, data-dictionary tooling, dumps, restores, and role management.
 
 ## PostgreSQL setup

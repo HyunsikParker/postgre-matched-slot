@@ -1,4 +1,5 @@
 # -*- coding: latin-1 -*-
+# Modified 2026-10-02: validate, specialize table2 slot extraction, then revalidate.
 import csv
 import hashlib
 import io
@@ -16,6 +17,8 @@ from pathlib import Path
 
 import paramiko
 import pandas as pd
+
+from services.expansion_slot_optimizer import optimize_validated_slot_statement
 
 from config import (
     CONTROL_DB,
@@ -13475,6 +13478,19 @@ WHERE database_name = {sql_literal(database_name)}
                     normalized_raw_schemas,
                     allowed_read_relations=allowed_read_relations,
                 )
+                optimized_statement = optimize_validated_slot_statement(
+                    statement, destination_schema_name, destination_table_name
+                )
+                if optimized_statement != statement:
+                    prepared_statement = cls._prepare_cross_table_expansion_statement(
+                        optimized_statement,
+                        source_schema_name,
+                        source_table_name,
+                        destination_schema_name,
+                        destination_table_name,
+                        normalized_raw_schemas,
+                        allowed_read_relations=allowed_read_relations,
+                    )
                 prepared_statements.append(prepared_statement["statement"])
                 for column_name in prepared_statement["destination_columns"]:
                     if column_name not in destination_columns:

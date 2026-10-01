@@ -1,0 +1,17 @@
+{
+  "tested_source_archive_sha256": "433dda69780961a5e0fff77855373aaac2a2c6448a59d58921f41f70750960df",
+  "completed_at_utc": "2026-10-01T20:24:46.670240+00:00",
+  "python": "3.14.6",
+  "top_level_dependencies": {
+    "customtkinter": "6.0.0",
+    "openpyxl": "3.1.5",
+    "pandas": "3.0.6",
+    "paramiko": "5.0.0",
+    "reportlab": "5.0.1",
+    "xlrd": "2.0.2"
+  },
+  "unit_tests_passed": 11,
+  "compile_passed": true,
+  "full_windows_ssh_linux_runtime_exercised": false,
+  "later_nonfunctional_change": "modification-notice comment added to postgres_service.py"
+}
